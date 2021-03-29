@@ -1,0 +1,13 @@
+{
+  "name": "github-action",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "lint": "npx eslint '**/*.js'"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "supertest": "^6.1.3"
+  }
+}
