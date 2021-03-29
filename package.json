@@ -5,9 +5,11 @@
   "license": "MIT",
   "scripts": {
     "lint": "npx eslint '**/*.js'",
-    "test": "jest"
+    "test": "jest",
+    "start": "node server.js"
   },
   "dependencies": {
+    "eslint": "^7.23.0",
     "express": "^4.17.1",
     "jest": "^26.6.3",
     "supertest": "^6.1.3"
