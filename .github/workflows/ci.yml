@@ -60,6 +60,6 @@ jobs:
           HEROKU_API_KEY: ${{ secrets.HEROKU_TOKEN }}
 
       - name: release the image
-        run: docker container:release web
+        run: heroku container:release -a fs6-github-action web
         env:
           HEROKU_API_KEY: ${{ secrets.HEROKU_TOKEN }}
