@@ -16,6 +16,21 @@ jobs:
       - name: checkout code
         uses: actions/checkout@v2
 
+      - name: get yarn cache
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+
+      - name: set up cache
+        uses: actions/cache@v1
+        id: yarn-cache
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: ${{ runner.os }}-yarn-
+
+      - name: install dependencies
+        run: yarn
+
       - name: run lint
         run: yarn run lint
 
